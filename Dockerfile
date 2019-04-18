@@ -9,3 +9,4 @@ ENV APP_ROUTE /app
 RUN mkdir -p $APP_ROUTE
 WORKDIR $APP_ROUTE
 
+RUN yarn install

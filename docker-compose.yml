@@ -5,6 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    command: yarn run start
     volumes:
       - ./:/app:cached
     ports:
