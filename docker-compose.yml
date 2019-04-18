@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    container_name: eonext_frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/src:cached
+    ports:
+      - 4001:3000
+    tty: true
+    stdin_open: true
