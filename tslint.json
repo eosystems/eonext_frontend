@@ -1,6 +1,21 @@
 {
-  "extends": [],
   "defaultSeverity": "warning",
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "extends": [
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
