@@ -20,7 +20,7 @@
       "prettier --single-quote --write",
       "git add"
     ],
-    "*.ts": [
+    "*.ts,*.tsx": [
       "tslint --fix",
       "git add"
     ]
