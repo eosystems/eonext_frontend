@@ -21,7 +21,7 @@
       "git add"
     ],
     "*.ts,*.tsx": [
-      "tslint --fix",
+      "npx tslint --fix",
       "git add"
     ]
   },
