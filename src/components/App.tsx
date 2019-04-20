@@ -4,7 +4,6 @@ import { withRouter } from 'react-router'
 import { GlobalStyle } from 'styles'
 
 import { Test } from './modules'
-import GlobalNavigation from 'src/components/molecules/GlobalNavigation'
 
 const App = () => (
   <main>
@@ -12,7 +11,6 @@ const App = () => (
     <React.Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route path="/" component={Test} />
-        <GlobalNavigation />
       </Switch>
     </React.Suspense>
   </main>
