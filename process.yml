@@ -1,0 +1,8 @@
+apps:
+  - script :'dist/bin/server.js'
+    name: 'eonext_frontend'
+    instances: -1
+    exec_mode: 'cluster'
+    env:
+      NODE_ENV: production
+
