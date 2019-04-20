@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "allowUnreachableCode": true,
+    "pretty": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "common": ["src/components/common/index"],
+      "common/*": ["src/components/common/*"],
+      "components/*": ["src/components/*"],
+      "ducks/*": ["src/ducks/*"],
+      "images/*": ["src/static/images/*"],
+      "modules": ["src/components/modules/index"],
+      "modules/*": ["src/components/modules/*"],
+      "server/*": ["src/server"],
+      "services": ["src/services/index"],
+      "services/*": ["src/services/*"],
+      "static/*": ["src/static/*"],
+      "styles": ["src/styles/index"],
+      "styles/*": ["src/styles/*"],
+      "types": ["src/types/index"],
+      "vectors/*": ["src/static/vectors/*"],
+      "styled-components": ["src/services/styled-components"]
+    },
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["dom", "es6"]
+  }
+}
