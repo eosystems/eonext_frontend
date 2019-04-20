@@ -72,7 +72,7 @@
     }],
     "quotemark": [true, "single", "avoid-escape", "jsx-double"],
     "no-shadowed-variable": false,
-    "semicolon": [true, "always", "ignore-interfaces"],
+    "semicolon": [false, "always", "ignore-interfaces"],
     "array-type": [true, "array"],
     "whitespace": [true, 
       "check-branch",
