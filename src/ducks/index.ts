@@ -1,5 +1,5 @@
-import test from './test';
+import test from './test'
 
 export const appReducers = {
-  test,
-};
+  test
+}

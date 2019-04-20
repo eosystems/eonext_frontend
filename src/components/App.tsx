@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
-import { GlobalStyle } from 'styles';
+import * as React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { withRouter } from 'react-router'
+import { GlobalStyle } from 'styles'
 
-import { Test } from './modules';
+import { Test } from './modules'
 
 const App = () => (
   <main>
@@ -14,6 +14,6 @@ const App = () => (
       </Switch>
     </React.Suspense>
   </main>
-);
+)
 
-export default withRouter(App);
+export default withRouter(App)

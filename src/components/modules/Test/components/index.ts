@@ -1,1 +1,1 @@
-export { default as TestPassed } from './TestPassed';
+export { default as TestPassed } from './TestPassed'

@@ -1,6 +1,6 @@
-import theme from './theme';
+import theme from './theme'
 
 export interface BaseStyled {
-  theme?: typeof theme;
-  className?: string;
+  theme?: typeof theme
+  className?: string
 }
