@@ -5,7 +5,11 @@
   ],
   "extends": [
     "tslint-config-standard",
-    "tslint-config-prettier"
+    "tslint-config-prettier",
+    "tslint-react"
+  ],
+  "plugins": [
+    "react"
   ],
   "rules": {
     "prettier": [
