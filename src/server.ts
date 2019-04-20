@@ -5,7 +5,7 @@ import { port } from 'config';
 
 const app = express();
 app.use(compress());
-app.use(express.static(path.resolve('dist')));
+app.use(express.static(path.resolve('dist')))
 
 app.use((req, res) => {
   res.sendFile('index.html', {
