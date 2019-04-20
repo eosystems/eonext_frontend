@@ -13,7 +13,6 @@ module.exports = ({ config }) => {
   });
   config.module.rules.push({
     test: /\.(jsx)$/,
-    include: /node_modules/,
     use: [
       {
         loader: require.resolve('babel-loader'),

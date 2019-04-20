@@ -38,6 +38,13 @@ const baseConfig: webpack.Configuration = {
         loader: 'babel-loader',
       },
       {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        query: {
+          plugins: ["transform-react-jsx", '@babel/plugin-proposal-class-properties']
+        }
+      },
+      {
         test: /\.svg$/,
         oneOf: [
           {
@@ -67,6 +74,10 @@ const baseConfig: webpack.Configuration = {
         ],
       },
       {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader']
+      },
+      {
         exclude: [
           /\.[jt]sx?$/,
           /\.css$/,
@@ -81,7 +92,7 @@ const baseConfig: webpack.Configuration = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.ts', '.tsx'],
+    extensions: ['*', '.js', '.ts', '.tsx', '.jsx'],
     plugins: [
       new TsconfigPathsPlugin(),
     ],
