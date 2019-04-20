@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import { GlobalStyle } from 'styles'
 
 import { Test } from './modules'
+import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css'
 
 const App = () => (
   <main>
