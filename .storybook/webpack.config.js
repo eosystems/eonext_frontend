@@ -11,6 +11,18 @@ module.exports = ({ config }) => {
       },
     ],
   });
+  config.module.rules.push({
+    test: /\.(jsx)$/,
+    include: /node_modules/,
+    use: [
+      {
+        loader: require.resolve('babel-loader'),
+        query: {
+          plugins: ["transform-react-jsx", '@babel/plugin-proposal-class-properties']
+        }
+      },
+    ]
+  });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
