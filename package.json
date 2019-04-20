@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "NODE_ENV=development ts-node -r tsconfig-paths/register ./devServer.ts",
     "tslint-fix": "npx tslint --fix './src/**/*.{ts,tsx}'",
+    "tslint": "npx tslint './src/**/*.{ts,tsx}'",
     "build": "NODE_ENV=production npm run clean && npm run build:js",
     "build:js": "webpack -p --hide-modules --config config/webpack/prod.ts",
     "clean": "rimraf dist/",
