@@ -26,7 +26,7 @@ export const media = Object.keys(sizes).reduce(
     accumulator[label] = (...args) =>
       css`
         @media (min-width: ${emSize}em) {
-          ${css(...args)};
+          ${css(null, ...args)};
         }
       `
     return accumulator
