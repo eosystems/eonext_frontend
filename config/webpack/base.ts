@@ -12,7 +12,7 @@ const baseConfig: webpack.Configuration = {
     filename: '[name].[hash].js',
     chunkFilename: '[name].js',
     path: path.resolve('dist'),
-    publicPath: '/',
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -21,44 +21,47 @@ const baseConfig: webpack.Configuration = {
           // sync + async chunks
           chunks: 'all',
           // import file path containing node_modules
-          test: /node_modules/,
+          test: /node_modules/
         },
         commons: {
           name: 'vendors',
           test: /node_modules/,
-          chunks: 'all',
-        },
-      },
+          chunks: 'all'
+        }
+      }
     },
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
     runtimeChunk: true,
-    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         query: {
-          plugins: ["transform-react-jsx", '@babel/plugin-proposal-class-properties']
+          plugins: [
+            'transform-react-jsx',
+            '@babel/plugin-proposal-class-properties'
+          ]
         }
       },
       {
-        test: /\.svg$/,
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
         oneOf: [
           {
             resourceQuery: /external/,
-            loader: 'url-loader?limit=10000',
+            loader: 'url-loader?limit=10000'
           },
           {
-            loader: '@svgr/webpack',
-          },
-        ],
+            loader: '@svgr/webpack'
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -66,27 +69,29 @@ const baseConfig: webpack.Configuration = {
           {
             resource: /external/,
             loader: 'file-loader',
-            query: { name: 'static/[name].[ext]' },
+            query: { name: 'static/[name].[ext]' }
           },
           {
             loader: 'url-loader',
             query: {
               limit: 10000,
-              name: 'static/[name].[ext]',
-            },
-          },
-        ],
+              name: 'static/[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.(sc|sa|c)ss/,
         use: [
-          { loader: MiniCssExtractPlugin.loader }, {
+          { loader: MiniCssExtractPlugin.loader },
+          {
             loader: 'css-loader',
             options: {
               url: false,
-              sourceMap: true,
+              sourceMap: true
             }
-          }, {
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: true
@@ -103,18 +108,16 @@ const baseConfig: webpack.Configuration = {
           /\.svg$/,
           /\.(jpe?g|png|gif)$/i,
           /\.json$/,
-          /\.html/,
+          /\.html/
         ],
         loader: 'file-loader',
-        query: { name: 'static/[name].[ext]' },
-      },
-    ],
+        query: { name: 'static/[name].[ext]' }
+      }
+    ]
   },
   resolve: {
     extensions: ['*', '.js', '.ts', '.tsx', '.jsx'],
-    plugins: [
-      new TsconfigPathsPlugin(),
-    ],
+    plugins: [new TsconfigPathsPlugin()]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -131,15 +134,16 @@ const baseConfig: webpack.Configuration = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
+        minifyURLs: true
+      }
     }),
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css'
     })
-  ],
-};
+  ]
+}
 
-export default baseConfig;
+export default baseConfig
 
-export const merge = (...config: webpack.Configuration[]) => webpackMerge(baseConfig, ...config);
+export const merge = (...config: webpack.Configuration[]) =>
+  webpackMerge(baseConfig, ...config)

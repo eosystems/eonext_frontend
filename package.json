@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn install && NODE_ENV=development ts-node -r tsconfig-paths/register ./devServer.ts",
+    "postinstall": "rm -rf src/static/ids && cp -r node_modules/@salesforce-ux/design-system/assets src/static/lds",
     "tslint-fix": "npx tslint --fix './src/**/*.{ts,tsx}'",
     "tslint": "npx tslint './src/**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",
