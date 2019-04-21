@@ -6,12 +6,13 @@ import { GlobalStyle } from 'styles'
 import 'styles/entry.scss'
 
 import { Test } from './modules'
-import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css'
+import GlobalNavigation from 'components/molecules/GlobalNavigation'
 
 const App = () => (
   <main>
     <GlobalStyle />
     <React.Suspense fallback={<div>Loading...</div>}>
+      <GlobalNavigation />
       <Switch>
         <Route path="/" component={Test} />
       </Switch>

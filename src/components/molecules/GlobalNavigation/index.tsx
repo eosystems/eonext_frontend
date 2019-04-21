@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
 import IconSettings from '@salesforce/design-system-react/components/icon-settings'
 import GlobalNavigationBar from '@salesforce/design-system-react/components/global-navigation-bar'
 import GlobalNavigationBarRegion from '@salesforce/design-system-react/components/global-navigation-bar/region'
