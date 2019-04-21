@@ -7,7 +7,16 @@ import { Button } from '@salesforce/design-system-react'
 export default function GlobalNavigation(props: any) {
   return (
     <div className="global-navigation__test">
-      <Button label="Hello Button" />
+      <GlobalNavigationBar>
+        <GlobalNavigationBarRegion region="primary" />
+        <GlobalNavigationBarRegion region="secondary" navigation>
+          <GlobalNavigationBarLink
+            href="javascript:void(0);"
+            label="Home"
+            id="home-link"
+          />
+        </GlobalNavigationBarRegion>
+      </GlobalNavigationBar>
     </div>
   )
 }
