@@ -1,8 +1,9 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as webpackMerge from 'webpack-merge';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import * as path from 'path'
+import * as webpack from 'webpack'
+import * as webpackMerge from 'webpack-merge'
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const baseConfig: webpack.Configuration = {
   output: {
@@ -74,31 +75,28 @@ const baseConfig: webpack.Configuration = {
         ],
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.scss/,
+        test: /\.(sc|sa|c)ss/,
         use: [
-          'style-loader',
-          {
+          { loader: MiniCssExtractPlugin.loader }, {
             loader: 'css-loader',
             options: {
               url: false,
-
-              importLoaders: 2
-            },
-          },
-          {
+              sourceMap: true,
+            }
+          }, {
             loader: 'sass-loader',
-
+            options: {
+              sourceMap: true
+            }
           }
-        ],
+        ]
       },
       {
         exclude: [
           /\.[jt]sx?$/,
           /\.css$/,
+          /\.scss$/,
+          /\.sass$/,
           /\.svg$/,
           /\.(jpe?g|png|gif)$/i,
           /\.json$/,
@@ -133,6 +131,9 @@ const baseConfig: webpack.Configuration = {
         minifyURLs: true,
       },
     }),
+    new MiniCssExtractPlugin({
+      filename: 'css/bundle.css'
+    })
   ],
 };
 
