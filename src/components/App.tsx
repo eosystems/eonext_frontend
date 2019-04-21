@@ -13,15 +13,14 @@ const LDS_ROOT = 'static/lds/assets'
 
 const App = () => (
   <main>
-    <IconSettings
-      standardSprite={`${LDS_ROOT}/icons/standard-sprite/svg/symbols.svg`}
-      utilitySprite={`${LDS_ROOT}/icons/utility-sprite/svg/symbols.svg`}
-      actionSprite={`${LDS_ROOT}/icons/action-sprite/svg/symbols.svg`}
-      doctypeSprite={`${LDS_ROOT}/icons/doctype-sprite/svg/symbols.svg`}
-      customSprite={`${LDS_ROOT}/icons/custom-sprite/svg/symbols.svg`}
-    >
+    <IconSettings iconPath="static/lds/assets/icons">
       <GlobalStyle />
-      <Button iconName="download" iconPosition="left" label="Neutral Icon" />
+      <Button
+        iconCategory="utility"
+        iconName="download"
+        iconPosition="left"
+        label="Neutral Icon"
+      />
       <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" component={Test} />
