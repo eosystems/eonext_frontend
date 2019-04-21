@@ -13,30 +13,6 @@ import AppLauncherSection from '@salesforce/design-system-react/components/app-l
 import AppLauncherTile from '@salesforce/design-system-react/components/app-launcher/tile'
 
 export default function GlobalNavigation(props: any) {
-  const dropdownCollection = [
-    {
-      label: 'Menu Item One',
-      value: '1',
-      iconCategory: 'utility',
-      iconName: 'table',
-      href: 'http://www.google.com'
-    },
-    {
-      label: 'Menu Item Two',
-      value: '2',
-      iconCategory: 'utility',
-      iconName: 'kanban',
-      href: 'http://www.google.com'
-    },
-    {
-      label: 'Menu Item Three',
-      value: '3',
-      iconCategory: 'utility',
-      iconName: 'side_list',
-      href: 'http://www.google.com'
-    }
-  ]
-
   return (
     <IconSettings iconPath="/assets/icons">
       <GlobalNavigationBar>
@@ -63,17 +39,14 @@ export default function GlobalNavigation(props: any) {
             label="Home"
             id="home-link"
           />
-          <GlobalNavigationBarDropdown
-            id="primaryDropdown"
-            assistiveText={{ icon: 'Context Menu Item 1' }}
-            label="Context Menu Item"
-            options={dropdownCollection}
-          />
-          <GlobalNavigationBarLink
-            href="javascript:void(0);"
-            label="Context Menu Item 2"
-            active
-          />
+          {props.menus.map((menu, i) => (
+            <GlobalNavigationBarDropdown
+              id="primaryDropdown"
+              assistiveText={{ icon: 'Context Menu Item 1' }}
+              label={menu.title}
+              options={menu.childMenus}
+            />
+          ))}
         </GlobalNavigationBarRegion>
       </GlobalNavigationBar>
     </IconSettings>
