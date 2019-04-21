@@ -6,8 +6,8 @@ import { Button } from '@salesforce/design-system-react'
 
 export default function GlobalNavigation(props: any) {
   return (
-    <p>
+    <div className="global-navigation__test">
       <Button label="Hello Button" />
-    </p>
+    </div>
   )
 }
