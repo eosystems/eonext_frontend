@@ -11,12 +11,27 @@ export default function EODataTable(props: any) {
         <h3 className="slds-text-heading_medium slds-m-vertical_medium">
           {props.tableTitle}
         </h3>
-        <DataTable items={props.items} id={props.tableId} striped>
+        <DataTable
+          assistiveText={{
+            actionsHeader: 'actions',
+            columnSort: 'sort this column',
+            columnSortedAscending: 'asc',
+            columnSortedDescending: 'desc',
+            selectAllRows: 'all rows',
+            selectRow: 'select this row'
+          }}
+          items={props.items}
+          fixedLayout
+          id={props.tableId}
+          onSort={props.handleSort}
+          striped
+        >
           {props.columns.map((column, i) => (
             <DataTableColumn
               key={`${column.property}_${i}`}
               label={column.name}
               property={column.property}
+              sortable={column.isSort}
             />
           ))}
         </DataTable>

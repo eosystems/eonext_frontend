@@ -7,18 +7,27 @@ import '../../../styles/entry.scss'
 const dataTableProps = {
   tableTitle: 'Assets',
   tableID: 'assets_indivisual',
+  handleSort: e => {
+    console.log(e.property + '/' + e.sortDirection)
+  },
   columns: [
     {
       name: 'ID',
-      property: 'id'
+      property: 'id',
+      isSort: true
     },
     {
       name: 'Location',
-      property: 'location'
+      property: 'location',
+      isSort: true
     },
     {
       name: 'TypeName',
       property: 'type_name'
+    },
+    {
+      name: 'Source',
+      property: 'pack_source'
     },
     {
       name: 'Quantity',
@@ -41,7 +50,8 @@ const dataTableProps = {
       type_name: 'Netak Scrap',
       quantity: 1,
       volume: '5m',
-      group: 'Commodities'
+      group: 'Commodities',
+      pack_source: 'セーフボックス001(ID:1)'
     },
     {
       id: '2',
@@ -74,10 +84,10 @@ const dataTableProps = {
       id: '5',
       location: 'Abudban IV',
       type_id: 34,
-      type_name: 'Netak Scrap',
+      type_name: 'セーフボックス001',
       quantity: 1,
       volume: '5m',
-      group: 'Commodities'
+      group: 'Miscellaneous'
     },
     {
       id: '6',
@@ -86,7 +96,8 @@ const dataTableProps = {
       type_name: 'Netak Scrap',
       quantity: 1,
       volume: '5m',
-      group: 'Commodities'
+      group: 'Commodities',
+      pack_source: 'セーフボックス001(ID:1)'
     }
   ]
 }
