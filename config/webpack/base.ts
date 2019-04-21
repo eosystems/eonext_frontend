@@ -5,6 +5,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import * as TerserPlugin from 'terser-webpack-plugin'
 
 const baseConfig: webpack.Configuration = {
   output: {
@@ -32,7 +33,7 @@ const baseConfig: webpack.Configuration = {
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
     runtimeChunk: true,
-    minimizer: [new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
     rules: [
