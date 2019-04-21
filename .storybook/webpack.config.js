@@ -25,6 +25,22 @@ module.exports = ({ config }) => {
     ]
   })
   config.module.rules.push({
+    test: /\.(svg|gif|jpe?g|png)$/,
+    use: [
+      {
+        loader: require.resolve('url-loader'),
+      },
+    ]
+  })
+  config.module.rules.push({
+    test: /\.(eot|woff|woff2|ttf)$/,
+    use: [
+      {
+        loader: require.resolve('url-loader'),
+      },
+    ]
+  })
+  config.module.rules.push({
     test: /\.(sc|sa|c)ss/,
     use: [
       { loader: MiniCssExtractPlugin.loader }, {

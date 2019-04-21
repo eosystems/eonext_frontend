@@ -3,6 +3,7 @@ import DataTable from '@salesforce/design-system-react/components/data-table'
 import DataTableColumn from '@salesforce/design-system-react/components/data-table/column'
 import DataTableCell from '@salesforce/design-system-react/components/data-table/cell'
 import IconSettings from '@salesforce/design-system-react/components/icon-settings'
+import Icon from '@salesforce/design-system-react/components/icon'
 
 export default function EODataTable(props: any) {
   return (
@@ -11,6 +12,16 @@ export default function EODataTable(props: any) {
         <h3 className="slds-text-heading_medium slds-m-vertical_medium">
           {props.tableTitle}
         </h3>
+        <div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
+          <div className="slds-col_padded">
+            <Icon
+              assistiveText={{ label: 'Account' }}
+              category="standard"
+              name="account"
+              size="small"
+            />
+          </div>
+        </div>
         <DataTable
           assistiveText={{
             actionsHeader: 'actions',
