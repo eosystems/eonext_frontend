@@ -78,6 +78,24 @@ const baseConfig: webpack.Configuration = {
         loaders: ['style-loader', 'css-loader']
       },
       {
+        test: /\.scss/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+
+              importLoaders: 2
+            },
+          },
+          {
+            loader: 'sass-loader',
+
+          }
+        ],
+      },
+      {
         exclude: [
           /\.[jt]sx?$/,
           /\.css$/,
