@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { GlobalStyle } from 'styles'
 
+import 'styles/entry.scss'
+
 import { Test } from './modules'
 import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css'
 

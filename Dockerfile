@@ -9,7 +9,7 @@ ENV APP_ROUTE /app
 RUN mkdir -p $APP_ROUTE
 WORKDIR $APP_ROUTE
 
-RUN npm install pm2 -g
-RUN npm install
+RUN yarn global add pm2
+RUN yarn install
 
 CMD ["pm2-runtime", "process.yml"]
