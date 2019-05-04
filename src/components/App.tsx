@@ -12,12 +12,14 @@ import Button from '@salesforce/design-system-react/components/button'
 const App = () => (
   <main>
     <GlobalStyle />
-    <Button
-      iconCategory="utility"
-      iconName="download"
-      iconPosition="left"
-      label="Neutral Icon"
-    />
+    <IconSettings iconPath="/assets/icons">
+      <Button
+        iconCategory="utility"
+        iconName="download"
+        iconPosition="left"
+        label="Neutral Icon"
+      />
+    </IconSettings>
     <React.Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route path="/" component={Test} />
