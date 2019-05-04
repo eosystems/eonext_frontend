@@ -54,14 +54,9 @@ const baseConfig: webpack.Configuration = {
           {
             resourceQuery: /external/,
             loader: 'file-loader',
-            query: { name: 'static/[name].[ext]' },
           },
           {
             loader: '@svgr/webpack',
-            query: {
-              limit: 10000,
-              name: 'static/[name].[ext]',
-            },
           },
         ],
       },
@@ -69,7 +64,6 @@ const baseConfig: webpack.Configuration = {
         test: /\.(jpe?g|png|gif)$/i,
         oneOf: [
           {
-            resource: /external/,
             loader: 'file-loader',
             query: { name: 'static/[name].[ext]' },
           },
