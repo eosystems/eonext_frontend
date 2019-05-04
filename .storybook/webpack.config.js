@@ -25,12 +25,36 @@ module.exports = ({ config }) => {
     ]
   })
   config.module.rules.push({
-    test: /\.(svg|gif|jpe?g|png)$/,
-    use: [
+    test: /\.(svg)$/i,
+    oneOf: [
       {
-        loader: require.resolve('url-loader'),
+        loader: 'file-loader',
+        query: { name: 'static/[name].[ext]' },
       },
-    ]
+      {
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'static/[name].[ext]',
+        },
+      },
+    ],
+  })
+  config.module.rules.push({
+    test: /\.(jpe?g|png|gif)$/i,
+    oneOf: [
+      {
+        loader: 'file-loader',
+        query: { name: 'static/[name].[ext]' },
+      },
+      {
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'static/[name].[ext]',
+        },
+      },
+    ],
   })
   config.module.rules.push({
     test: /\.(eot|woff|woff2|ttf)$/,
