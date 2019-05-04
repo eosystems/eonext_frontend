@@ -7,10 +7,11 @@ import { install } from 'ducks/test'
 import { Button } from 'common'
 import { TestPassed } from './components'
 import { LogoIconWrapper, Section } from './components/styled'
+import LogoIcon from 'vectors/logo.svg'
 
 const Test: React.FC<HomeProps> = ({ test, ...props }) => (
   <Section>
-    <LogoIconWrapper />
+    <LogoIconWrapper src={LogoIcon} />
     {test.passed ? (
       <TestPassed />
     ) : (

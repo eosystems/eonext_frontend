@@ -49,15 +49,16 @@ const baseConfig: webpack.Configuration = {
         }
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg)$/i,
         oneOf: [
+          {
+            loader: 'file-loader',
+            query: { name: 'static/[name].[ext]' },
+          },
           {
             resourceQuery: /external/,
             loader: 'url-loader?limit=10000',
-          },
-          {
-            loader: '@svgr/webpack',
-          },
+          }
         ],
       },
       {
