@@ -53,8 +53,7 @@ const baseConfig: webpack.Configuration = {
         oneOf: [
           {
             resourceQuery: /external/,
-            loader: 'file-loader',
-            query: { name: 'static/[name].[ext]' },
+            loader: 'url-loader?limit=10000',
           },
           {
             loader: '@svgr/webpack',
