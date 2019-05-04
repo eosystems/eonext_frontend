@@ -56,9 +56,12 @@ const baseConfig: webpack.Configuration = {
             query: { name: 'static/[name].[ext]' },
           },
           {
-            resourceQuery: /external/,
-            loader: 'url-loader?limit=10000',
-          }
+            loader: 'url-loader',
+            query: {
+              limit: 10000,
+              name: 'static/[name].[ext]',
+            },
+          },
         ],
       },
       {

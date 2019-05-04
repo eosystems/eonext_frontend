@@ -8,11 +8,12 @@ import { Test } from './modules'
 import GlobalNavigation from 'components/molecules/GlobalNavigation'
 import IconSettings from '@salesforce/design-system-react/components/icon-settings'
 import Button from '@salesforce/design-system-react/components/button'
+import 'static/lds/assets/icons/utility-sprite/svg/symbols.svg'
 
 const App = () => (
   <main>
     <GlobalStyle />
-    <IconSettings iconPath="/assets/icons">
+    <IconSettings iconPath="/static/lds/assets/icons">
       <Button
         iconCategory="utility"
         iconName="download"
