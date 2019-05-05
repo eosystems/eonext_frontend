@@ -12,7 +12,6 @@ app.use((req, res) => {
     root: path.resolve('dist')
   })
 })
-
 app.listen(port.client, () => {
   console.info(`Listening on port ${port.client}`)
 })

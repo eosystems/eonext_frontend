@@ -7,7 +7,13 @@ import Icon from '@salesforce/design-system-react/components/icon'
 
 export default function EODataTable(props: any) {
   return (
-    <IconSettings iconPath="/assets/icons">
+    <IconSettings
+      standardSprite={'static/symbols.svg'}
+      utilitySprite={'static/symbols.svg'}
+      actionSprite={'static/symbols.svg'}
+      doctypeSprite={'static/symbols.svg'}
+      customSprite={'static/symbols.svg'}
+    >
       <div style={{ overflow: 'auto' }}>
         <h3 className="slds-text-heading_medium slds-m-vertical_medium">
           {props.tableTitle}

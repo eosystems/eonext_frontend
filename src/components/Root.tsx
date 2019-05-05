@@ -6,6 +6,11 @@ import { theme } from 'styles'
 import store from 'src/store'
 import 'static/favicon.ico'
 import App from './App'
+import 'static/lds/assets/icons/custom/custom1.svg'
+import 'static/lds/assets/icons/custom/custom1_60.png'
+import 'static/lds/assets/images/product1.jpg'
+import 'images/confetti2.png'
+import 'static/images/lds/product2.jpg'
 
 export default () => (
   <>
