@@ -5,6 +5,8 @@ import DataTableCell from '@salesforce/design-system-react/components/data-table
 import IconSettings from '@salesforce/design-system-react/components/icon-settings'
 import Icon from '@salesforce/design-system-react/components/icon'
 
+import '../../../styles/asset'
+
 export default function EODataTable(props: any) {
   return (
     <IconSettings

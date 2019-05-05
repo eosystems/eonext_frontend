@@ -5,9 +5,9 @@ import GlobalNavigationBarRegion from '@salesforce/design-system-react/component
 import GlobalNavigationBarDropdown from '@salesforce/design-system-react/components/global-navigation-bar/dropdown'
 import GlobalNavigationBarLink from '@salesforce/design-system-react/components/global-navigation-bar/link'
 
-import Button from '@salesforce/design-system-react/components/button'
-import Icon from '@salesforce/design-system-react/components/icon'
+import '../../../styles/asset'
 
+import Button from '@salesforce/design-system-react/components/button'
 import AppLauncher from '@salesforce/design-system-react/components/app-launcher'
 import AppLauncherSection from '@salesforce/design-system-react/components/app-launcher/section'
 import AppLauncherTile from '@salesforce/design-system-react/components/app-launcher/tile'

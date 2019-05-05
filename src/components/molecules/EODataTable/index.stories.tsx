@@ -2,8 +2,6 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import EODataTable from './'
 
-import '../../../styles/entry.scss'
-
 const dataTableProps = {
   tableTitle: 'Assets',
   tableID: 'assets_indivisual',

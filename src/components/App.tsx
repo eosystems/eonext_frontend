@@ -3,12 +3,10 @@ import { Switch, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { GlobalStyle } from 'styles'
 
-import 'styles/entry.scss'
 import { Test } from './modules'
 import GlobalNavigation from 'components/molecules/GlobalNavigation'
 import IconSettings from '@salesforce/design-system-react/components/icon-settings'
 import Button from '@salesforce/design-system-react/components/button'
-import 'static/lds/assets/icons/utility-sprite/svg/symbols.svg'
 
 const App = () => (
   <main>
