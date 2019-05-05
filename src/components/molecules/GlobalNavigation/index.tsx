@@ -14,7 +14,13 @@ import AppLauncherTile from '@salesforce/design-system-react/components/app-laun
 
 export default function GlobalNavigation(props: any) {
   return (
-    <IconSettings iconPath="/assets/icons">
+    <IconSettings
+      standardSprite={'static/symbols.svg'}
+      utilitySprite={'static/symbols.svg'}
+      actionSprite={'static/symbols.svg'}
+      doctypeSprite={'static/symbols.svg'}
+      customSprite={'static/symbols.svg'}
+    >
       <GlobalNavigationBar>
         <GlobalNavigationBarRegion region="primary">
           <AppLauncher
